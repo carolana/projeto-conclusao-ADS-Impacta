@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "206e3145-b0e1-47b8-91c3-b71742c44c99",
+		"name": "Projeto ADS Impacta",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8335092"
+	},
+	"item": [
+		{
+			"name": "cadastrarProdutos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Mouse\",\r\n    \"descricao\": \"logitech 200\",\r\n    \"quantidade\": 32,\r\n    \"preco\": 800.00\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/produtos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listarProdutos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Mouse\",\r\n    \"descricao\": \"logitech 200\",\r\n    \"quantidade\": 32,\r\n    \"preco\": 800.00\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/produtos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
