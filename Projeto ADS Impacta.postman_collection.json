@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "206e3145-b0e1-47b8-91c3-b71742c44c99",
+		"_postman_id": "928af9b7-510f-4422-a667-71a501142348",
 		"name": "Projeto ADS Impacta",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "8335092"
+		"_exporter_id": "8164955"
 	},
 	"item": [
 		{
@@ -19,7 +19,36 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nome\": \"Mouse\",\r\n    \"descricao\": \"logitech 200\",\r\n    \"quantidade\": 32,\r\n    \"preco\": 800.00\r\n}"
+					"raw": "{\r\n    \"nome\": \"Espada Longa\",\r\n    \"descricao\": \"Espada de duas mão de lâmina afiada\",\r\n    \"quantidade\": 4,\r\n    \"preco\": 800.99\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/produtos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "atualizarProdutos",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 3,\r\n    \"nome\": \"Espada Longa\",\r\n    \"descricao\": \"Espada de duas mão de lâmina afiada\",\r\n    \"quantidade\": 25,\r\n    \"preco\": 400.99\r\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8080/produtos",

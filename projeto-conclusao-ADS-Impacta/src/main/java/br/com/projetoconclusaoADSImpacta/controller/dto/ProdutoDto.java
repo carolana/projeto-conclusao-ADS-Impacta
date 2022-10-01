@@ -18,6 +18,7 @@ public class ProdutoDto {
 		this.id = produto.getId();
 		this.nome = produto.getNome();
 		this.descricao = produto.getDescricao();
+		this.quantidade = produto.getQuantidade();
 		this.preco = produto.getPreco();
 	}	
 	

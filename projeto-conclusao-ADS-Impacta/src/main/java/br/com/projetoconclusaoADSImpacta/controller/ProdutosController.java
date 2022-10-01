@@ -1,14 +1,13 @@
 package br.com.projetoconclusaoADSImpacta.controller;
 
-import java.math.BigDecimal;
 import java.net.URI;
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,12 +32,20 @@ public class ProdutosController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<ProdutoDto> cadastrar (@RequestBody ProdutoForm produtoForm, UriComponentsBuilder uriBuilder) {
-		
-		Produto produto = produtoForm.converter();
+	public ResponseEntity<ProdutoDto> cadastrar (@RequestBody ProdutoForm produtoForm, UriComponentsBuilder uriBuilder) {	
+		Produto produto = produtoForm.converter();	
 		produtoRepository.save(produto);
 		URI uri = uriBuilder.path("/produtos/{id}").buildAndExpand(produto.getId()).toUri();
 		
 		return ResponseEntity.created(uri).body(new ProdutoDto(produto));
+	}
+	
+	@PutMapping
+	public ResponseEntity<String> atualizar (@RequestBody ProdutoForm produtoForm, UriComponentsBuilder uriBuilder) {
+		Produto produto = produtoForm.converter();
+		var response = produtoRepository.update(produto);
+		URI uri = uriBuilder.path("/produtos/{id}").buildAndExpand(produto.getId()).toUri();
+		
+		return ResponseEntity.created(uri).body(response + " Registro(s) atualizado(s)");
 	}
 }

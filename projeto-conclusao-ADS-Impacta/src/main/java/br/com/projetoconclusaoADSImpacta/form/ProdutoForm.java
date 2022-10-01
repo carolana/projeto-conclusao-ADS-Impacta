@@ -6,11 +6,18 @@ import br.com.projetoconclusaoADSImpacta.modelo.Produto;
 
 public class ProdutoForm {
 	
+	private Long id;
 	private String nome;
 	private String descricao;
 	private int quantidade;
 	private BigDecimal preco;
 	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getNome() {
 		return nome;
 	}
@@ -37,7 +44,7 @@ public class ProdutoForm {
 	}
 	public Produto converter() {
 		
-		return new Produto(nome, descricao, quantidade, preco);
+		return new Produto(id, nome, descricao, quantidade, preco);
 	}
 	
 	
