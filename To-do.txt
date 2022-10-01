@@ -1,0 +1,19 @@
+Pendências:
+
+-Criar error handling para as chamadas do back-end
+
+-fazer chamadas relacionadas ao usuário(área logada, login, cadastro)
+
+-Definir e criar telas Mockadas da loja
+
+-Definir e aplicar identidade visual para as telas
+
+-Integrar serviços front x back
+
+-Migrar banco de dados para MySQL
+
+-Complementar diagramas e documentação
+
+-Planejar ambiente e técnicas de deploy
+
+-Refatorar, "polir" e otimizar código
