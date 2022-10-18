@@ -17,3 +17,5 @@ Pendências:
 -Planejar ambiente e técnicas de deploy
 
 -Refatorar, "polir" e otimizar código
+
+-Apresentação ppt introdutória para apresentação, explicando projeto e arquitetura sucintamente
