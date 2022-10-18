@@ -17,3 +17,9 @@ Login -> Formulário Simples (Guilherme)
 [Usuário] Alterar Senha ->
 
 Menu -> Compartilhado (Arturo)
+
+[Admin][Biblioteca] Análise de dados produtos -> analytcs com gráficos
+
+[Admin][Biblioteca] Análise de movimentações x usuários -> analytcs com gráficos
+
+ 
