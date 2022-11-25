@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <br />
+      <h3>Excluir Produto</h3>
+      <br />
+    </div>
+    <div class="col-12">
+      <form #check="ngForm">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputPreco">Produtos:</label>
+            <!-- ID do Produto -->
+            <select
+              id="inputPreco"
+              class="form-control"
+              name="prod"
+              ngModel
+              #tn="ngModel"
+              required
+            >
+              <option value="" selected></option>
+
+              <option *ngFor="let tenis of tenis" [value]="tenis.id">
+                {{ tenis.nome }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <button
+          type="button"
+          id="btn"
+          class="btn btn-success"
+          (click)="excluirTenis(check)"
+        >
+          Apagar</button
+        ><br /><br />
+      </form>
+    </div>
+    <div class="col-12">
+      <a class="nav-link" routerLink="/lista" routerLinkActive="active"
+        >Listar Produtos</a
+      >
+    </div>
+  </div>
+</div>

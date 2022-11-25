@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <br />
+      <h3>Pesquisar Preço</h3>
+      <br />
+    </div>
+    <div class="col-12">
+      <form #check="ngForm">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputPreco">Produtos:</label>
+            <select
+              id="inputPreco"
+              class="form-control"
+              name="prod"
+              ngModel
+              #prod="ngModel"
+              required
+            >
+              <option value="" selected></option>
+
+              <option *ngFor="let tenis of tenis" [value]="tenis.id">
+                {{ tenis.nome }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <button
+          type="button"
+          id="btn"
+          class="btn btn-success"
+          (click)="pesquisarTenis(check)"
+        >
+          Consultar</button
+        ><br /><br />
+      </form>
+    </div>
+    <div class="col-12">
+      <p class="result" *ngIf="preco != 0">
+        Preço do Produto: R$ {{ preco }}
+        <a class="nav-link" routerLink="/lista" routerLinkActive="active"
+          >Listar Produtos</a
+        >
+      </p>
+    </div>
+  </div>
+</div>

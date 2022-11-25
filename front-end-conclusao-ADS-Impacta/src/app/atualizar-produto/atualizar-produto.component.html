@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <br />
+      <h3>Atualizar Produto</h3>
+      <br />
+    </div>
+
+    <div class="col-12">
+      <form #check="ngForm">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputPreco">Escolher Produto:</label>
+            <select
+              id="inputPreco"
+              class="form-control"
+              name="prod"
+              ngModel
+              #prod="ngModel"
+              required
+            >
+              <option value="" selected></option>
+
+              <option *ngFor="let tenis of tenis" [value]="tenis.id">
+                {{ tenis.nome }}
+              </option>
+            </select>
+            <label for="inputNome">Nome:</label>
+            <input
+              id="inputNome"
+              class="form-control"
+              name="nome"
+              ngModel
+              #nome="ngModel"
+              required
+            />
+            <label for="inputTipo">Tipo:</label>
+            <input
+              id="inputTipo"
+              class="form-control"
+              name="tipo"
+              ngModel
+              #tipo="ngModel"
+              required
+            />
+            <label for="inputTamanho">Tamanho:</label>
+            <input
+              id="inputTamanho"
+              class="form-control"
+              name="tamanho"
+              ngModel
+              #tamanho="ngModel"
+              required
+            />
+            <label for="inputQuantidade">Quantidade:</label>
+            <input
+              id="inputQuantidade"
+              class="form-control"
+              name="quantidade"
+              ngModel
+              #quantidade="ngModel"
+              required
+            />
+            <label for="inputPreco">Preço:</label>
+            <input
+              id="inputPreco"
+              class="form-control"
+              name="preco"
+              ngModel
+              #preco="ngModel"
+              required
+            />
+          </div>
+        </div>
+        <button
+          type="button"
+          id="btn"
+          class="btn btn-success"
+          (click)="atualizarTenis(check)"
+        >
+          Atualizar
+        </button>
+        <br /><br />
+      </form>
+    </div>
+    <div class="col-12">
+      <a class="nav-link" routerLink="/lista" routerLinkActive="active"
+        >Listar Produtos</a
+      >
+    </div>
+  </div>
+</div>

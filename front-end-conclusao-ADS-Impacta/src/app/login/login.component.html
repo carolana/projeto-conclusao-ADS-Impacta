@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <br />
+      <h3>Login</h3>
+      <br />
+      <div class="mb-1">
+        <label for="usuairo" class="form-label">Usuário</label>
+        <input
+          [(ngModel)]="usuario.nome"
+          type="text"
+          class="form-control"
+          id="usuairo"
+          aria-describedby="usuarioAJuda"
+        />
+        <div id="usuarioAjuda" class="form-text">
+          Não compartilhe seus dados com ninguém
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="senha" class="form-label">Senha</label>
+        <input
+          [(ngModel)]="usuario.senha"
+          type="password"
+          class="form-control"
+          id="senha"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="fazerLogin()">
+        Entrar
+      </button>
+      <br>
+      <br>
+      <p *ngIf="msgError != ''">
+        {{ msgError }}
+      </p>
+    </div>
+  </div>
+</div>

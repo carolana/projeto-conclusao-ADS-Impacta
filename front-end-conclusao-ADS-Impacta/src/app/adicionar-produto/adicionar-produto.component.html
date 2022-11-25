@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <br />
+      <h3>Adicionar Produto</h3>
+      <br />
+    </div>
+    <div class="col-12">
+      <!-- Os valores do novo Produto são definidos abaixo, menos o valor do ID -->
+      <form method="POST" #frm="ngForm" (ngSubmit)="adicionarTenis(frm)">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputNome">Nome:</label>
+            <input
+              id="inputNome"
+              class="form-control"
+              name="nome"
+              placeholder="Nome do Tênis"
+              [(ngModel)]="proTenis.nome"
+              required
+            />
+            <label for="inputTipo">Tipo:</label>
+            <input
+              id="inputTipo"
+              class="form-control"
+              name="tipo"
+              placeholder="Masculino ou Feminino"
+              [(ngModel)]="proTenis.tipo"
+              required
+            />
+            <label for="inputTamanho">Tamanho:</label>
+            <input
+              id="inputTamanho"
+              class="form-control"
+              name="tamanho"
+              placeholder="Tamanho do Tênis"
+              [(ngModel)]="proTenis.tamanho"
+              required
+            />
+            <label for="inputQuantidade">Quantidade:</label>
+            <input
+              id="inputQuantidade"
+              class="form-control"
+              name="quantidade"
+              placeholder="Quantidade do Tênis"
+              [(ngModel)]="proTenis.quantidade"
+              required
+            />
+            <label for="inputPreco">Preço:</label>
+            <input
+              id="inputPreco"
+              class="form-control"
+              name="preco"
+              placeholder="Preço do Tênis (R$)"
+              [(ngModel)]="proTenis.preco"
+              required
+            />
+          </div>
+        </div>
+        <button
+          type="submit"
+          id="btn"
+          class="btn btn-success"
+          [disabled]="frm.invalid"
+        >
+          Adicionar
+        </button>
+        <br /><br />
+      </form>
+    </div>
+    <div class="col-12">
+      <a class="nav-link" routerLink="/lista" routerLinkActive="active"
+        >Listar Produtos</a
+      >
+    </div>
+  </div>
+</div>
+
+<p *ngIf="msg != ''">
+  {{ msg }}
+</p>
