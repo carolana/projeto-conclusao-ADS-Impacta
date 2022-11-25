@@ -37,13 +37,5 @@ public class UsuarioController {
 		return ResponseEntity.created(uri).body(new UsuarioDto(usuario));
 	}
 	
-	
-	public ModelAndView login(Usuario usuario, BindingResult br, HttpSession session ) {
-		ModelAndView mv = new ModelAndView();
-		mv.addObject("usuario", new Usuario());
-		
-		Usuario usuarioLogin = usuarioRepository.buscarLogin(usuario.getEmail(), usuario.getSenha());
-		
-		return mv;
-	}
+
 }
