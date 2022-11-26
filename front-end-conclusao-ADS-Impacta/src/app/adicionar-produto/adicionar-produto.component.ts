@@ -53,7 +53,8 @@ export class AdicionarProdutoComponent implements OnInit {
 
   adicionarTenis(frm: NgForm): void {
     //É definido o ID do "proTenis" que será cadastrado. Os outros valores, como nome e quantidade, estão definidos no HTML do componente
-    this.proTenis.id = this.idVar;
+    this.proTenis.ID = this.idVar;
+    console.log(this.proTenis)
     this.prod.adicionaProduto(this.proTenis).subscribe((res) => {
       // this.prod.mensagem('Produto Criado !!');
 
