@@ -1,2 +1,0 @@
-INSERT INTO PRODUTO(nome, descricao, quantidade, preco) VALUES('Celular', 'Celular Android de última geração', 10, 2000);
-INSERT INTO PRODUTO(nome, descricao, quantidade, preco) VALUES('Notebook', 'macBookAir', 18, 20000);
