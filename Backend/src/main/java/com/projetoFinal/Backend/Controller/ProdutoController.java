@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -39,17 +40,18 @@ public class ProdutoController {
 	}
 	
 	@PostMapping()
-	public Produto save(Produto produto) {
+	public Produto save(@RequestBody Produto produto) {
 		return produtoRepository.save(produto);
 	}
 	
 	@PutMapping()
-	public Produto update(Produto produto) {
+	public Produto update(@RequestBody Produto produto) {
 		return produtoRepository.save(produto);
 	}
 	
 	@DeleteMapping()
-	public void delete(Long id) {
+	public void delete(@RequestBody Produto produto) {
+		Long id = (long) produto.getID();
 		produtoRepository.deleteById(id);
 	}
 

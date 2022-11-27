@@ -19,24 +19,47 @@ export class ProdutosService {
   }
 
   atualizarProdutoId(prod: any): Observable<any> {
-    return this.http.put<any>(`${this.URL}/produtos`, prod); //URL para Atualizar um Produto no qual é passado um Produto com as novas informações. Método PUT (Objeto TODO) é diferente do Método PATCH (PARTE do Objeto).
+
+    const body = {
+      id: prod.id,
+      nome: prod.nome,
+      tipo: prod.tipo,
+      tamanho: prod.tamanho,
+      quantidade: prod.quantidade,
+  };
+
+    return this.http.put<any>(`${this.URL}/produtos`, body); //URL para Atualizar um Produto no qual é passado um Produto com as novas informações. Método PUT (Objeto TODO) é diferente do Método PATCH (PARTE do Objeto).
   }
 
   adicionaProduto(prod: any): Observable<any> {
-    return this.http.post<any>(`${this.URL}/produtos`, prod); //URL para Adicionar um Novo Produto. Método POST
+
+    const body = {
+        id: prod.id,
+        nome: prod.nome,
+        tipo: prod.tipo,
+        tamanho: prod.tamanho,
+        quantidade: prod.quantidade,
+    };
+
+    return this.http.post<any>(`${this.URL}/produtos`, body); //URL para Adicionar um Novo Produto. Método POST
   }
 
   excluiProdutoId(id: any): Observable<any> {
 
+    
     const options = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
       }),
       body: {
-        id: id
+        id: id,
+        nome: "",
+        tipo: "",
+        tamanho: 0,
+        quantidade: 0,
       },
     };
 
-    return this.http.delete<any>(`${this.URL}/produtos`, options); //URL para Deletar um Produto pelo ID. Método DELETE
+    return this.http.request<any>('delete',`${this.URL}/produtos`, options); //URL para Deletar um Produto pelo ID. Método DELETE
   }
 }
