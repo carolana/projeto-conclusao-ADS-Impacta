@@ -12,7 +12,7 @@ import { PesquisarProdutosComponent } from './pesquisar-produtos/pesquisar-produ
 import { LogoutComponent } from './logout/logout/logout.component';
 
 const routes: Routes = [
-  { path: 'inicio', component: ExibirProdutosComponent, canActivate: [AuthGuard] },
+  { path: 'inicio', component: InicioComponent, canActivate: [AuthGuard] },
   { path: 'lista', component: ExibirProdutosComponent, canActivate: [AuthGuard] },
   { path: 'excluir', component: ExcluirProdutoComponent, canActivate: [AuthGuard] },
   { path: 'adicionar', component: AdicionarProdutoComponent, canActivate: [AuthGuard] },

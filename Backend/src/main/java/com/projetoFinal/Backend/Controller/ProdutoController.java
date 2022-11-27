@@ -45,8 +45,8 @@ public class ProdutoController {
 	}
 	
 	@PutMapping()
-	public Produto update(@RequestBody Produto produto) {
-		return produtoRepository.save(produto);
+	public void update(@RequestBody Produto produto) {
+		 produtoRepository.save(produto);
 	}
 	
 	@DeleteMapping()

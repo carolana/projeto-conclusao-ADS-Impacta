@@ -26,6 +26,7 @@ export class ProdutosService {
       tipo: prod.tipo,
       tamanho: prod.tamanho,
       quantidade: prod.quantidade,
+      preco: prod.preco,
   };
 
     return this.http.put<any>(`${this.URL}/produtos`, body); //URL para Atualizar um Produto no qual é passado um Produto com as novas informações. Método PUT (Objeto TODO) é diferente do Método PATCH (PARTE do Objeto).
@@ -39,6 +40,7 @@ export class ProdutosService {
         tipo: prod.tipo,
         tamanho: prod.tamanho,
         quantidade: prod.quantidade,
+        preco: prod.preco,
     };
 
     return this.http.post<any>(`${this.URL}/produtos`, body); //URL para Adicionar um Novo Produto. Método POST
@@ -57,6 +59,7 @@ export class ProdutosService {
         tipo: "",
         tamanho: 0,
         quantidade: 0,
+        preco: 0,
       },
     };
 

@@ -34,7 +34,7 @@ export class PesquisarProdutosComponent implements OnInit {
 
     //Na função é passado o ID do produto, que neste caso foi nomeada de "prod", por isso "info.prod". A função retorna o valor do preço que é passado para a variável "preco" para ser exibida para o usuário.
     this.prod.pesquisarProdutoId(info.prod).subscribe((res) => {
-      this.preco = res.pre;
+      this.preco = res.preco;
     });
   }
 }
